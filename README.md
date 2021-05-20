@@ -19,3 +19,8 @@ Suggestions and pull requests are welcomed!.
 
 This project was bootstrapped with [Chrome Extension CLI](https://github.com/dutiyesh/chrome-extension-cli)
 
+## Steps to run Project
+
+1. run command : npm run build
+2. upload build folder on load unpacked manage extension
+
