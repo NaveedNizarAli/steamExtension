@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Steam Extension-email",
+  "version": "0.1.0",
+  "description": "My Chrome Extension",
+  "icons": {
+    "16": "icons/icon_16.png",
+    "32": "icons/icon_32.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Steam Extension-email",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "permissions": ["tabs", "activeTab", "http://*/*", "https://*/*", "management"],
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js; object-src 'self'"
+}
