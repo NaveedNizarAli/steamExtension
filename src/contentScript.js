@@ -75,6 +75,19 @@ function checkUnread(data){
 
 function verifypage(data){
     console.log('verify page', data);
+
+    var s1 = document.createElement("script");
+    s1.type = "text/javascript";
+    s1.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js";
+
+    var s2 = document.createElement("script");
+    s2.type = "text/javascript";
+    s2.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js";
+
+    document.head.appendChild(s1)
+    document.head.appendChild(s2)
+    
+
     
     const verifylink = document.querySelectorAll('[rel="noreferrer"]')[0];
 
@@ -88,7 +101,20 @@ function verifypage(data){
         }
     })
 
+    
     console.log('fulldata', data.fulldata )
+
+    
+    setTimeout(function(){
+        var filename ='C:/Users/pc/Downloads/ExtensionProject.xlsx';
+        data=data.fulldata
+        var ws = XLSX.utils.json_to_sheet(data);
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "People");
+        XLSX.writeFile(wb,filename);
+    }, 5000)
+
+
 
     document.getElementById('rcmbtn105').addEventListener('click',function(){ 
         chrome.runtime.sendMessage({verifylink: verifylink.href, fulldata: data.fulldata}, function(response){
