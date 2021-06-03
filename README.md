@@ -21,6 +21,8 @@ This project was bootstrapped with [Chrome Extension CLI](https://github.com/dut
 
 ## Steps to run Project
 
-1. run command : npm run build
-2. upload build folder on load unpacked manage extension
+1. clone this project and go to root directory by using command : cd steamExtension 
+2. run command : npm install 
+3. run command : npm run build
+4. upload build folder on load unpacked manage extension
 
