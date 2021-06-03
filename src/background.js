@@ -151,22 +151,22 @@ chrome.runtime.onMessage.addListener(function(data, sender, sendResponse) {
     if(data.text && error === null && data.fulldata)
     {
         chrome.tabs.update({url: "https://mail.zsthost.com/"})
-        setTimeout(function(){ startVerify({data : data.text,  fulldata : data.fulldata}); }, 3000);
+        setTimeout(function(){ startVerify({data : data.text,  fulldata : data.fulldata}); }, 4500);
        
     }
     else if(data.unread)
     {
-        setTimeout(function(){ startUnreadCheck({data : data.unread,  fulldata : data.fulldata}); }, 3000);
+        setTimeout(function(){ startUnreadCheck({data : data.unread,  fulldata : data.fulldata}); }, 4500);
     }
     else if(data.verifypage)
     {
-        setTimeout(function(){ verifypage({data : data.verifypage,  fulldata : data.fulldata}); }, 3000);
+        setTimeout(function(){ verifypage({data : data.verifypage,  fulldata : data.fulldata}); }, 4500);
     }
     else if(data.verifylink)
     {
         setTimeout(function(){ 
             chrome.tabs.update({url: data.verifylink})
-        }, 2000); 
+        }, 3000); 
         
         setTimeout(function(){ 
             
@@ -175,7 +175,7 @@ chrome.runtime.onMessage.addListener(function(data, sender, sendResponse) {
             }, 3000); 
             
             chrome.tabs.update({url: 'https://store.steampowered.com/join/'})
-        }, 4000);
+        }, 6000);
     }
 
 
